@@ -5,21 +5,11 @@ import { fetchIssueById, updateIssue, clearIssuesCache, clearSummaryCache } from
 import { Form, Button, Select, Typography, Card, Alert, Space, Layout, Spin } from "antd";
 import { AppHeader, AppFooter } from "@/components/AppLayout";
 import "antd/dist/reset.css";
-import { IssueUpdatePayload } from "@/utils/types/issue";
+import { Issue, IssueUpdatePayload } from "@/utils/types/issue";
 
 const TEAM = ["Ali", "Fatima", "Ahmed", "Unassigned"];
 const STATUSES = ["OPEN", "IN_PROGRESS", "RESOLVED"];
 
-interface Issue {
-    id: number;
-    title: string;
-    description: string;
-    status: string;
-    priority: string;
-    assignee: string;
-    createdAt: string;
-    updatedAt: string;
-}
 
 export default function IssueDetailPage() {
     const { id } = useParams<{ id: string }>();

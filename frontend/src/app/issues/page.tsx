@@ -6,16 +6,7 @@ import { Table, Button, Select, Typography, Space, Layout, Divider, Modal } from
 import { PlusOutlined, ReloadOutlined } from '@ant-design/icons';
 import { AppHeader, AppFooter } from "@/components/AppLayout";
 import "antd/dist/reset.css";
-import { IssuesSummary } from "@/utils/types/issue";
-
-interface Issue {
-  id: number;
-  title: string;
-  status: string;
-  priority: string;
-  assignee: string;
-  createdAt: string;
-}
+import { Issue, IssuesSummary } from "@/utils/types/issue";
 
 export default function IssuesPage() {
   const [issues, setIssues] = useState<Issue[]>([]);
