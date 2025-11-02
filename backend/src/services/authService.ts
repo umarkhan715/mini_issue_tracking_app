@@ -29,9 +29,7 @@ export async function registerUser(email: string, name: string) {
     }
 
     user = await userRepo.create(email, name);
-    const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, { expiresIn: '7d' });
     return {
         user: { id: user.id, email: user.email, name: user.name },
-        token,
     };
 }
