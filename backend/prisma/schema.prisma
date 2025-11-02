@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Issue {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  priority    Priority
+  status      Status   @default(OPEN)
+  assignee    String // For MVP: just a string (e.g. Ali, Fatima, Ahmed, Unassigned)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("issues")
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // If you want to relate issues to users in the future:
+  // issues    Issue[] @relation("UserIssues")
+
+  @@map("users")
+}

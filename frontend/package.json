@@ -1,0 +1,31 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@ant-design/charts": "^2.6.6",
+    "@ant-design/icons": "^6.1.0",
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "antd": "^5.28.0",
+    "chart.js": "^4.5.1",
+    "next": "16.0.1",
+    "react": "19.2.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "typescript": "^5"
+  }
+}
