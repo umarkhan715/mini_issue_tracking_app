@@ -24,10 +24,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.get('/', (req, res) => {
-    res.json({ message: 'Mini Issue Tracking API', status: 'running' });
-});
-
 app.use('/api/auth', authRoutes);
 app.use('/api/issues', issueRoutes);
 
